@@ -16,6 +16,7 @@ export function ChangeType(): JSX.Element {
     };
     return (
         <div>
+            <h3>Change Type</h3>
             <div>
                 <Button onClick={setAnswerType}>Change Type</Button>
             </div>
