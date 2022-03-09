@@ -17,6 +17,7 @@ export function StartAttempt(): JSX.Element {
     }
     return (
         <div>
+            <h3>Start Attempts</h3>
             <div>
                 <Button onClick={() => quizStart()} disabled={!manageState()}>
                     Start Quiz

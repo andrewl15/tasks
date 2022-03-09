@@ -30,6 +30,7 @@ export function TwoDice(): JSX.Element {
     }
     return (
         <div>
+            <h3>Two Dice</h3>
             <div>
                 <Button onClick={() => setDiceOne(d6())}>Roll Left</Button>
                 <span data-testid="left-die">{diceOneState}</span>
