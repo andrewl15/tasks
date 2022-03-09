@@ -2,9 +2,7 @@ import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 
 export function GiveAttempts(): JSX.Element {
-    type ChangeEvent = React.ChangeEvent<
-        HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement
-    >;
+    type ChangeEvent = React.ChangeEvent<HTMLInputElement>;
     const [attempt, setAttempt] = useState<number>(3);
     const [reqAttempt, setAttemptRequest] = useState<string>("0");
     function desideButton(): boolean {
@@ -16,7 +14,7 @@ export function GiveAttempts(): JSX.Element {
     }
     return (
         <div>
-            <span>Number of attemps: {attempt}</span>
+            <span>Number of attempts: {attempt}</span>
             <div>
                 <Form.Group controlId="setAttemptByRequest">
                     <Form.Label>Increase attempts:</Form.Label>
@@ -24,7 +22,11 @@ export function GiveAttempts(): JSX.Element {
                         type="number"
                         value={reqAttempt}
                         onChange={(event: ChangeEvent) =>
-                            setAttemptRequest(event.target.value || "0")
+                            setAttemptRequest(
+                                event.target.value.length !== 0
+                                    ? event.target.value
+                                    : "0"
+                            )
                         }
                     />
                 </Form.Group>
