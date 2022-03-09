@@ -6,7 +6,7 @@ export function GiveAttempts(): JSX.Element {
         HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement
     >;
     const [attempt, setAttempt] = useState<number>(3);
-    const [reqAttempt, setAttemptRequest] = useState<number>(0);
+    const [reqAttempt, setAttemptRequest] = useState<string>("0");
     function desideButton(): boolean {
         if (attempt <= 0) {
             return true;
@@ -24,7 +24,7 @@ export function GiveAttempts(): JSX.Element {
                         type="number"
                         value={reqAttempt}
                         onChange={(event: ChangeEvent) =>
-                            setAttemptRequest(parseInt(event.target.value) || 0)
+                            setAttemptRequest(event.target.value || "0")
                         }
                     />
                 </Form.Group>
@@ -36,7 +36,9 @@ export function GiveAttempts(): JSX.Element {
                 >
                     use
                 </Button>
-                <Button onClick={() => setAttempt(attempt + reqAttempt)}>
+                <Button
+                    onClick={() => setAttempt(attempt + parseInt(reqAttempt))}
+                >
                     gain
                 </Button>
             </div>
