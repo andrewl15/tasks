@@ -14,6 +14,7 @@ export function GiveAttempts(): JSX.Element {
     }
     return (
         <div>
+            <h3>Give Attempts</h3>
             <span>Number of attempts: {attempt}</span>
             <div>
                 <Form.Group controlId="setAttemptByRequest">

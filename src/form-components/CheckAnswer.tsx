@@ -15,6 +15,7 @@ export function CheckAnswer({
     }
     return (
         <div>
+            <h3>Check Answers</h3>
             <Form.Label>Answer Box</Form.Label>
             <Form.Control value={answer} onChange={updateName} />
             <div>Result: {answer === expectedAnswer ? "✔️" : "❌"}.</div>
