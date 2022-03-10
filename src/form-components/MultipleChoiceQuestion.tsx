@@ -8,7 +8,9 @@ export function MultipleChoiceQuestion({
     options: string[];
     expectedAnswer: string;
 }): JSX.Element {
-    type ChangeEvent = React.ChangeEvent<HTMLInputElement>;
+    type ChangeEvent = React.ChangeEvent<
+        HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement
+    >;
     const [choice, setChoice] = useState<string>(options[0]);
 
     function updateChoice(event: ChangeEvent) {
@@ -20,13 +22,13 @@ export function MultipleChoiceQuestion({
                 <h3>Multiple Choice Question</h3>
                 <Form.Group controlId="multipleChoice">
                     <Form.Label>What color is my underwear?</Form.Label>
-                    <Form.Check value={choice} onChange={updateChoice}>
+                    <Form.Select value={choice} onChange={updateChoice}>
                         {options.map((choice: string) => (
                             <option key={choice} value={choice}>
                                 {choice}
                             </option>
                         ))}
-                    </Form.Check>
+                    </Form.Select>
                 </Form.Group>
                 Correct ?: {choice === expectedAnswer ? "✔️" : "❌"}.
             </div>

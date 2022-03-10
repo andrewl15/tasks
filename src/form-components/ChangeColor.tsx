@@ -1,19 +1,21 @@
 import React, { useState } from "react";
 import { Form } from "react-bootstrap";
 
+const COLORS = [
+    "red",
+    "blue",
+    "purple",
+    "turquoise",
+    "cyan",
+    "orange",
+    "green",
+    "white"
+];
+const DEFAULT_COLOR = COLORS[0];
 export function ChangeColor(): JSX.Element {
-    type ChangeEvent = React.ChangeEvent<HTMLInputElement>;
-    const COLORS = [
-        "red",
-        "blue",
-        "purple",
-        "turquoise",
-        "cyan",
-        "orange",
-        "green",
-        "white"
-    ];
-    const DEFAULT_COLOR = COLORS[0];
+    type ChangeEvent = React.ChangeEvent<
+        HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement
+    >;
     const [color, setColor] = useState<string>(DEFAULT_COLOR);
     function updateColor(event: ChangeEvent) {
         setColor(event.target.value);
@@ -22,25 +24,29 @@ export function ChangeColor(): JSX.Element {
         <div>
             <div>
                 <h3>Change Color</h3>
-                <Form.Group controlId="elements">
-                    <Form.Label>List of Colors</Form.Label>
+                {COLORS.map((thisColor: string) => (
                     <Form.Check
-                        //inline
-                        data-testid="colored-box"
+                        inline
+                        key={thisColor}
+                        value={thisColor}
                         type="radio"
+                        id="radio-colors"
+                        label={thisColor}
                         name="colors"
+                        checked={color === thisColor}
                         onChange={updateColor}
-                        id="change-color"
-                        label={color}
+                        style={{ backgroundColor: thisColor }}
+                    ></Form.Check>
+                ))}
+                <div>
+                    You have chosen{" "}
+                    <span
+                        data-testid="colored-box"
+                        style={{ backgroundColor: color }}
                     >
-                        {COLORS.map((color: string) => (
-                            <option key={color} value={color}>
-                                {color}
-                            </option>
-                        ))}
-                    </Form.Check>
-                </Form.Group>
-                <div>You have chosen {color}.</div>
+                        {color}.
+                    </span>
+                </div>
             </div>
         </div>
     );
