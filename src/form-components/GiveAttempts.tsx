@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 
 export function GiveAttempts(): JSX.Element {
-    type ChangeEvent = React.ChangeEvent<HTMLInputElement>;
+    type ChangeEvent = React.ChangeEvent<
+        HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement
+    >;
     const [attempt, setAttempt] = useState<number>(3);
     const [reqAttempt, setAttemptRequest] = useState<string>("0");
     function desideButton(): boolean {
