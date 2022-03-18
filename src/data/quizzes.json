@@ -4,5 +4,17 @@
         "questions": 5,
         "description": "You will be answering a variety of animal trivia questions. Some may be tricky!",
         "id": "ANIMAL_QUESTIONS"
+    },
+    {
+        "title": "Trivia Quiz",
+        "questions": 3,
+        "description": "You will be given two questions about UD and a random question.",
+        "id": "TRIVIA_QUESTIONS"
+    },
+    {
+        "title": "Simple Quiz",
+        "questions": 4,
+        "description": "You will be answering very simple and easy questions.",
+        "id": "SIMPLE_QUESTIONS"
     }
 ]

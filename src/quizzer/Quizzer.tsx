@@ -29,8 +29,11 @@ export function Quizzer(): JSX.Element {
                     // setMovieWatched={setMovieWatched}
                 ></QuizList>
             </div>
+            <div>
+                <Button>Add Quiz</Button>
+            </div>
             <div className="sketch">
-                <img src={ApplicationSketch} width="500" height="500" />
+                <img src={ApplicationSketch} width="800" height="800" />
             </div>
         </div>
     );
