@@ -4,7 +4,6 @@ import { Button } from "react-bootstrap";
 import { Quiz } from "../interfaces/quiz";
 import { QuizList } from "../quiz-components/QuizList";
 import ApplicationSketch from "./PicOne.jpg";
-//import MY_QUESTIONS from "../data/quiz-questions.json";
 import MY_QUIZES from "../data/quizzes.json";
 
 const myQuizes = MY_QUIZES.map(
@@ -14,6 +13,7 @@ const myQuizes = MY_QUIZES.map(
 );
 
 export function Quizzer(): JSX.Element {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [quiz, setQuiz] = useState<Quiz[]>(myQuizes);
     // type ChangeEvent = React.ChangeEvent<
     //     HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement
