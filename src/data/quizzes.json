@@ -1,0 +1,8 @@
+[
+    {
+        "title": "Animal Quiz",
+        "questions": 5,
+        "description": "You will be answering a variety of animal trivia questions. Some may be tricky!",
+        "id": "ANIMAL_QUESTIONS"
+    }
+]
