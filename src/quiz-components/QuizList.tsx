@@ -2,28 +2,24 @@ import React from "react";
 import { Quiz } from "../interfaces/quiz";
 import { QuizView } from "./QuizView";
 import { Stack } from "react-bootstrap";
-//import { MovieView } from "./MovieView";
 
 export function QuizList({
-    quiz
-}: // deleteMovie,
-// editMovie,
-// setMovieWatched
-{
-    quiz: Quiz[];
-    // deleteMovie: (id: string) => void;
-    // editMovie: (id: string, newMovie: Movie) => void;
-    // setMovieWatched: (id: string, s: boolean, l: boolean) => void;
+    quizzes,
+    editQuiz,
+    deleteQuiz
+}: {
+    quizzes: Quiz[];
+    editQuiz: (id: string, newQuiz: Quiz) => void;
+    deleteQuiz: (id: string) => void;
 }): JSX.Element {
     return (
         <Stack gap={3}>
-            {quiz.map((quiz: Quiz) => (
+            {quizzes.map((quiz: Quiz) => (
                 <div key={quiz.id} className="bg-light border m-2 p-2">
                     <QuizView
                         quiz={quiz}
-                        // deleteMovie={deleteMovie}
-                        // editMovie={editMovie}
-                        // setMovieWatched={setMovieWatched}
+                        editQuiz={editQuiz}
+                        deleteQuiz={deleteQuiz}
                     ></QuizView>
                 </div>
             ))}

@@ -1,54 +1,52 @@
-{
-    "ANIMAL_QUESTIONS": [
-        {
-            "id": 1,
-            "name": "Smartest Animal",
-            "body": "Which of these animals is the smartest animal below humans?",
-            "type": "multiple_choice_question",
-            "options": ["Crow / Ravens", "Octopus", "Chimpanzees", "Dolphins"],
-            "expected": "crow / ravens",
-            "points": 30,
-            "published": false
-        },
-        {
-            "id": 2,
-            "name": "Octopus Brain",
-            "body": "How many brains does an octopus have?",
-            "type": "multiple_choice_question",
-            "options": ["5", "1", "2", "9"],
-            "expected": "9",
-            "points": 10,
-            "published": false
-        },
-        {
-            "id": 3,
-            "name": "Cat Lives",
-            "body": "How many lives does a cat have?",
-            "type": "short_answer_question",
-            "options": [],
-            "expected": "9",
-            "points": 5,
-            "published": false
-        },
-        {
-            "id": 4,
-            "name": "Human DNA",
-            "body": "Which of these animals are humans most closely related to?",
-            "type": "multiple_choice_question",
-            "options": ["Chimpanzees", "Gorillas", "Orangutans", "Snails"],
-            "expected": "Chimpanzees",
-            "points": 10,
-            "published": false
-        },
-        {
-            "id": 5,
-            "name": "Describe Kitten",
-            "body": "Use word to describe a kitten",
-            "type": "short_answer_question",
-            "options": [],
-            "expected": "cute",
-            "points": 10,
-            "published": false
-        }
-    ]
-}
+[
+    {
+        "id": 1,
+        "name": "Smartest Animal",
+        "body": "Which of these animals is the smartest animal below humans?",
+        "type": "multiple_choice_question",
+        "options": ["Crow / Ravens", "Octopus", "Chimpanzees", "Dolphins"],
+        "expected": "crow / ravens",
+        "points": 30,
+        "published": false
+    },
+    {
+        "id": 2,
+        "name": "Octopus Brain",
+        "body": "How many brains does an octopus have?",
+        "type": "multiple_choice_question",
+        "options": ["5", "1", "2", "9"],
+        "expected": "9",
+        "points": 10,
+        "published": false
+    },
+    {
+        "id": 3,
+        "name": "Cat Lives",
+        "body": "How many lives does a cat have?",
+        "type": "short_answer_question",
+        "options": [],
+        "expected": "9",
+        "points": 5,
+        "published": false
+    },
+    {
+        "id": 4,
+        "name": "Human DNA",
+        "body": "Which of these animals are humans most closely related to?",
+        "type": "multiple_choice_question",
+        "options": ["Chimpanzees", "Gorillas", "Orangutans", "Snails"],
+        "expected": "Chimpanzees",
+        "points": 10,
+        "published": false
+    },
+    {
+        "id": 5,
+        "name": "Describe Kitten",
+        "body": "Use word to describe a kitten",
+        "type": "short_answer_question",
+        "options": [],
+        "expected": "cute",
+        "points": 10,
+        "published": false
+    }
+]

@@ -1,32 +1,44 @@
-import React from "react";
-import { Container, Row, Col, Button } from "react-bootstrap";
-//import { SongList } from "./SongList";
+import React, { useState } from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import { RecordQuizControls } from "./RecordQuizControls";
+import { QuizEditor } from "./QuizEditor";
 import { Quiz } from "../interfaces/quiz";
 
-export function QuizView({ quiz }: { quiz: Quiz }): JSX.Element {
-    return (
+export function QuizView({
+    quiz,
+    editQuiz,
+    deleteQuiz
+}: {
+    quiz: Quiz;
+    editQuiz: (id: string, newQuiz: Quiz) => void;
+    deleteQuiz: (id: string) => void;
+}): JSX.Element {
+    const [editing, setEditing] = useState<boolean>(false);
+    function changeEditing() {
+        setEditing(!editing);
+    }
+    return editing ? (
+        <QuizEditor
+            changeEditing={changeEditing}
+            quiz={quiz}
+            editQuiz={editQuiz}
+            deleteQuiz={deleteQuiz}
+        ></QuizEditor>
+    ) : (
         <Container>
             <Row>
                 <Col>
                     <h3>{quiz.title}</h3>
-                    <Row>
-                        <Col>
-                            <Button size="sm">Take Quiz</Button>{" "}
-                            <Button size="sm">Edit Quiz</Button>
-                        </Col>
-                    </Row>
-                    {/* <MovieRating rating={movie.rating}></MovieRating> */}
+                    <RecordQuizControls
+                        changeEditing={changeEditing}
+                    ></RecordQuizControls>
                     <i> Number of Questions: {quiz.questions}</i>
                 </Col>
             </Row>
             <Row>
                 <Col>
                     <p>{quiz.description}</p>
-                    {/* <SongList songs={movie.soundtrack}></SongList> */}
                 </Col>
-                {/* <Col>
-                    <MovieTrailer id={movie.id}></MovieTrailer>
-                </Col> */}
             </Row>
         </Container>
     );
